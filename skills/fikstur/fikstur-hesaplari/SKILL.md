@@ -1,6 +1,6 @@
 ---
 name: fikstur-hesaplari
-description: "Fikstür hesapları: kenetleme kuvveti, pim-delik boşluğu, elmas pim, konumlama hatası, cıvata torku, pim kesme. 'Kenet yeter mi', 'pim toleransı' gibi sorularda kullan."
+description: "Fikstür, kenet ve aparat hesaplarında her zaman kullan: kenetleme kuvveti, kesme kuvveti, kenet sayısı, pim-delik boşluğu, elmas pim, konumlama hatası, cıvata torku, pim kesme."
 ---
 
 # Fikstür Hesapları
