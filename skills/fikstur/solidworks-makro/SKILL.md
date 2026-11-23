@@ -1,6 +1,6 @@
 ---
 name: solidworks-makro
-description: "SolidWorks 2025 için VBA makrosu yazar, düzeltir ve açıklar (SolidWorks API, .swp, .bas). Türkçe SolidWorks arayüzünde çalışan makrolar, özel özellikler (custom properties: Reference No, Description, Material, Process, Thickness, Yüksek Mukavemetli Sac mı?, Weight), BOM öncesi kontrol, toplu PDF / DXF çıktısı, montaj gezme, teknik resim otomasyonu. Kullanıcı makro, SolidWorks otomasyonu, API, toplu işlem, özel özellik doldurma veya mevcut bir makrosunda hata olduğunu söylediğinde kullan."
+description: "Türkçe SolidWorks 2025 için VBA makro yazar ve düzeltir: özel özellikler, BOM öncesi kontrol, toplu PDF ve DXF, montaj gezme. Makro veya otomasyon istendiğinde kullan."
 ---
 
 # SolidWorks Makro (VBA)

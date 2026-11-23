@@ -1,6 +1,6 @@
 ---
 name: fikstur-hesaplari
-description: "Fikstür ve aparat tasarımı için mühendislik hesapları yapar: talaşlı işlemede kesme kuvveti (Kienzle) ve gereken kenetleme kuvveti, hızlı kenet / hidrolik silindir seçimi, iki pimli konumlamada pim-delik boşluğu, elmas pim (diamond pin) genişliği, konumlama ve dönme hatası, tolerans zinciri, cıvata ön yükü ve sıkma torku, kaymaya karşı kapasite, pim kesme ve yüzey basıncı. Kullanıcı 'kenet yeter mi', 'kaç kN kenet lazım', 'pim toleransı', 'elmas pim', 'cıvata torku', 'pim kesilir mi' gibi sorular sorduğunda veya fikstür review sırasında sayısal kontrol gerektiğinde kullan."
+description: "Fikstür hesapları: kenetleme kuvveti, pim-delik boşluğu, elmas pim, konumlama hatası, cıvata torku, pim kesme. 'Kenet yeter mi', 'pim toleransı' gibi sorularda kullan."
 ---
 
 # Fikstür Hesapları

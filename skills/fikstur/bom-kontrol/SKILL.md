@@ -1,6 +1,6 @@
 ---
 name: bom-kontrol
-description: "SolidWorks'ten çekilen BOM (malzeme listesi, parça listesi) dosyasını satın alma ve imalata gitmeden önce kontrol eder: boş özel özellikler, tekrar eden Reference No, geçersiz Material veya Process değeri, kalınlık ve ağırlık tutarsızlıkları, yüksek mukavemetli sac işareti. Kullanıcı BOM listesi, malzeme listesi veya BOM Excel dosyası paylaşıp kontrol istediğinde kullan."
+description: "SolidWorks BOM (malzeme listesi) kontrolü: boş özel özellikler, tekrar eden Reference No, geçersiz Material veya Process, kalınlık ve ağırlık tutarsızlıkları."
 ---
 
 # BOM Kontrolü

@@ -1,6 +1,6 @@
 ---
 name: fikstur-tasarim-review
-description: "Punta fikstürü, kaynak fikstürü, talaşlı işleme fikstürü, şablon ve aparat tasarımlarını sistematik olarak gözden geçirir (fixture design review). Kullanıcı bir fikstür konseptini, 3D model ekran görüntüsünü veya tasarım fikrini paylaşıp kontrol, görüş, eleştiri, risk analizi istediğinde; konumlama (3-2-1, locating), kenetleme (clamping), pim, burç, dayama, torç erişimi, çarpılma, talaş tahliyesi, poka-yoke, ergonomi konuları geçtiğinde kullan."
+description: "Punta, kaynak ve talaşlı işleme fikstürü, şablon ve aparat tasarımını kontrol listesiyle gözden geçirir: konumlama, kenetleme, erişim, çarpılma, ergonomi, poka-yoke."
 ---
 
 # Fikstür Tasarım Gözden Geçirme
