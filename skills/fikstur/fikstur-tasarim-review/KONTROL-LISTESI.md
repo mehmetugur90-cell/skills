@@ -3,13 +3,13 @@
 ## A. Genel (her fikstür tipi)
 
 ### A1. Konumlama (locating)
-- [ ] 3-2-1 prensibi: birincil yüzeyde 3, ikincilde 2, üçüncülde 1 temas noktası var mı?
+- [ ] 3-2-1 prensibi: birincil yüzeyde 3, ikincilde 2, üçüncülde 1 temas noktası var mı? Uzun veya esnek parçalarda (bom, kol, şasi) birincil yüzeyde 3'ten fazla destek (N-2-1) gerekebilir; fazladan destekler ayarlı veya yaylı olmalı ki parçayı zorlamasın.
 - [ ] Aşırı belirleme (over-constraint) var mı? Aynı serbestlik derecesini iki eleman tutuyorsa parça zorlanır veya oturmaz.
 - [ ] Konumlama yüzeyleri parça resmindeki datumlarla (A, B, C) aynı mı? Farklıysa tolerans zinciri büyür.
-- [ ] İki pimli konumlamada ikinci pim elmas pim (diamond pin) mi? İki silindirik pim delik merkez mesafesi toleransını karşılamaz.
+- [ ] İki pimli konumlamada ikinci pim elmas pim (diamond pin) mi, ya da ikinci delik kanal (oblong) mu? İki silindirik pim ancak boşlukların toplamının yarısı, merkez mesafesi toleransını (parça + fikstür) karşılıyorsa kullanılabilir; fikstur-hesaplari skill'inin `pim` komutuyla kontrol et.
 - [ ] Konumlama elemanları kenetleme kuvvetinin karşısında mı? Kenet, parçayı dayamaya doğru itmeli; dayamadan uzaklaştırmamalı.
-- [ ] Ham (oksit kesimli, plazma kesimli) yüzeye konumlanırken kesim toleransı ve çapak hesaba katıldı mı?
-- [ ] Dayama yüzeyleri küçük ve tanımlı mı (pad, pul)? Geniş düz temas yüzeyi, çapak ve kirden dolayı tekrarlanabilirliği bozar.
+- [ ] Ham (oksijenle veya plazma ile kesilmiş) yüzeye konumlanırken kesim toleransı ve çapak hesaba katıldı mı?
+- [ ] Dayama yüzeyleri küçük ve tanımlı mı (ped, dayama butonu)? Geniş düz temas yüzeyi, çapak ve kirden dolayı tekrarlanabilirliği bozar.
 - [ ] Konumlama elemanları değiştirilebilir mi (aşınma parçası)? Sertleştirilmiş mi?
 
 ### A2. Kenetleme (clamping)
@@ -21,7 +21,7 @@
 - [ ] Kenet kolu açık konumda başka bir elemana veya operatöre çarpıyor mu?
 
 ### A3. Hata önleme (poka-yoke)
-- [ ] Parça ters, simetrik yanlış veya sağ/sol karıştırılarak takılabiliyor mu? Engelleyici pim veya şekil var mı?
+- [ ] Parça ters, simetri nedeniyle yanlış yönde veya sağ/sol karıştırılarak takılabiliyor mu? Engelleyici pim veya şekil var mı?
 - [ ] Benzer parçalar için kullanılan fikstürlerde varyant karışıklığı engelleniyor mu?
 - [ ] Parçanın yerinde olduğu kontrol edilebiliyor mu (görsel, sensör)?
 
@@ -50,8 +50,8 @@
 ## C. Kaynak fikstürü
 
 - [ ] Torç erişimi: tüm dikişlere doğru torç açısıyla ulaşılabiliyor mu? Robotlu kaynakta robot erişim simülasyonu yapıldı mı?
-- [ ] Kaynak pozisyonu: dikişlerin çoğu oluk (PA) veya yatay (PB) pozisyonda kaynatılabiliyor mu? Pozisyoner gerekir mi?
-- [ ] Çarpılma: kaynak sonrası çekme yönü ve miktarı değerlendirildi mi? Ön gerdirme (pre-set) veya ters açı verildi mi?
+- [ ] Kaynak pozisyonu: dikişlerin çoğu oluk (PA) veya yatay köşe (PB) pozisyonunda kaynatılabiliyor mu? Pozisyoner gerekir mi?
+- [ ] Çarpılma: kaynak sonrası çekme yönü ve miktarı değerlendirildi mi? Ters açı verme (pre-setting) veya ön bükme / ön gerdirme (pre-bending) uygulandı mı?
 - [ ] Kaynak sonrası parça fikstürden çıkabiliyor mu? Çekme parçayı pimlere kilitleyebilir: konik pim, geri çekilebilir pim, sökülebilir dayama düşünüldü mü?
 - [ ] Sıçrantı (spatter): pim, burç, mil ve kenet mekanizmaları sıçrantıdan korunuyor mu? Dikiş altında bakır veya sıçrantı tutmayan altlık var mı?
 - [ ] Topraklama (şase) bağlantısı fikstür üzerinden mi? Akım yatak, mil, pnömatik eleman üzerinden geçiyor mu (ark izi, yatak hasarı)?
@@ -74,7 +74,7 @@
 ## E. Şablon, mastar ve aparat
 
 - [ ] Şablonun referans aldığı yüzey parça resmindeki datum mu?
-- [ ] Delme şablonunda burç tipi (sabit / değiştirilebilir) ve burç ile parça arası mesafe uygun mu? (talaş çıkışı için genelde 0,5 d ile 1 d arası)
+- [ ] Delme şablonunda burç tipi (sabit / değiştirilebilir) ve burç ile parça arası mesafe uygun mu? (talaş çıkışı için kaba kural: kısa talaşlı dökme demirde yaklaşık 0,5 d, çelik ve alüminyumda 1 d ile 1,5 d; mesafe büyüdükçe kılavuzlama hassasiyeti düşer)
 - [ ] Mastar toleransı ölçülen toleransın yaklaşık onda biri mi? Aşınma payı bırakıldı mı?
 - [ ] Geçer ve geçmez tarafları açıkça işaretli mi (renk, kazıma)?
 - [ ] Şablonun ağırlığı ve tutma yeri operatöre uygun mu?

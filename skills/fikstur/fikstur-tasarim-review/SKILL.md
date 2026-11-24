@@ -1,6 +1,6 @@
 ---
 name: fikstur-tasarim-review
-description: "Punta, kaynak ve talaşlı işleme fikstürü, şablon ve aparat tasarımını kontrol listesiyle gözden geçirir: konumlama, kenetleme, erişim, çarpılma, ergonomi, poka-yoke."
+description: "Fikstür, şablon veya aparat tasarımı (ekran görüntüsü, model, fikir) paylaşılıp görüş istendiğinde kullan: konumlama, kenetleme, erişim, çarpılma, ergonomi, poka-yoke kontrolü."
 ---
 
 # Fikstür Tasarım Gözden Geçirme
@@ -48,8 +48,8 @@ Risk seviyeleri:
 - **Orta**: Kalite dalgalanır, çevrim süresi uzar, operatör zorlanır.
 - **Düşük**: İyileştirme fırsatı, maliyet veya bakım kolaylığı.
 
-Bulguları risk seviyesine göre sırala. Öneriler uygulanabilir olsun: "konumlamayı iyileştir" değil, "B datum yüzeyine 2 adet sabit dayama ekle, ölçüden 5 mm içeride" gibi.
+Bulguları risk seviyesine göre sırala. Öneriler uygulanabilir olsun: "konumlamayı iyileştir" değil, "B datum yüzeyine 2 adet sabit dayama ekle, parça kenarından 5 mm içeride" gibi.
 
 ## Terimler
 
-Türkçe terim kullan, ilk geçtiği yerde İngilizcesini parantez içinde ver: konumlama pimi (locating pin), elmas pim (diamond pin), dayama (stop / rest pad), hızlı kenet (toggle clamp), ön gerdirme (pre-set), çarpılma (distortion), sıfır noktası bağlama (zero-point clamping).
+Türkçe terim kullan, ilk geçtiği yerde İngilizcesini parantez içinde ver: konumlama pimi (locating pin), elmas pim (diamond pin), dayama (stop), destek pedi (rest pad), hızlı kenet (toggle clamp), ters açı verme (pre-setting), ön bükme / ön gerdirme (pre-bending), çarpılma (distortion), sıfır noktası bağlama (zero-point clamping).

@@ -10,13 +10,13 @@ Kullanıcı SolidWorks 2025'i **Türkçe arayüzle** kullanıyor ve makroları *
 Bu skill'deki dosyalar:
 - [OZEL-OZELLIKLER.md](./OZEL-OZELLIKLER.md): şirketin özel özellik adları ve izin verilen değerler. Özel özelliklere dokunan her makroda bunu oku.
 - [MAKRO-FIKIRLERI.md](./MAKRO-FIKIRLERI.md): kullanıcının iş akışına göre önerilen makrolar ve durumları.
-- `makrolar/`: hazır makro kaynak kodları (`.bas`), yazıldıkça eklenir.
+- Bu skill'de hazır makro kodu yok. Yazdığın her makroyu kullanıcıya indirilebilir bir `.bas` dosyası olarak ver (aşağıdaki kodlama kurallarıyla).
 
 ## Kurallar
 
 ### 1. Dil bağımsızlığı
-API adları her zaman İngilizcedir, ama modeldeki öğe adları arayüz diline göre değişir.
-- Varsayılan düzlemleri adla seçme ("Front Plane" Türkçe arayüzde "Ön Düzlem" olur). Özellik ağacını `FirstFeature` / `GetNextFeature` ile gez ve `GetTypeName2 = "RefPlane"` olan ilk üç özelliği al (sırasıyla Ön, Üst, Sağ).
+API adları her zaman İngilizcedir, ama modeldeki öğe adları değişkendir. Varsayılan düzlem ve özellik adları arayüz dilinden değil, parçanın oluşturulduğu şablondan gelir: Türkçe şablonla açılan parçada "Ön Düzlem", İngilizce şablonla veya tedarikçiden gelen parçada "Front Plane" olabilir.
+- Varsayılan düzlemleri adla seçme. Özellik ağacını `FirstFeature` / `GetNextFeature` ile gez ve `GetTypeName2 = "RefPlane"` olan ilk üç özelliği al (standart şablonlarda sırasıyla Ön, Üst, Sağ).
 - Özellik tipini `GetTypeName2` ile kontrol et, özellik adıyla değil.
 - Hata ve uyarı metinlerini SolidWorks'ün ürettiği metinle karşılaştırma; dönüş kodlarını (enum) kullan.
 
@@ -26,13 +26,16 @@ VBA editörü dosyaları Windows ANSI kod sayfasıyla okur. UTF-8 bir `.bas` dos
 - Türkçe karakter gereken string'leri `ChrW` ile kur: ı = `ChrW(305)`, İ = `ChrW(304)`, ş = `ChrW(351)`, Ş = `ChrW(350)`, ğ = `ChrW(287)`, Ğ = `ChrW(286)`, ü = `ChrW(252)`, Ü = `ChrW(220)`, ö = `ChrW(246)`, Ö = `ChrW(214)`, ç = `ChrW(231)`, Ç = `ChrW(199)`.
 - Kullanıcıya gösterilen mesajlar ASCII Türkçe olabilir ("Acik dokuman yok") ya da `ChrW` ile kurulabilir; özellik adları gibi birebir eşleşmesi gerekenler mutlaka `ChrW` ile kurulmalı.
 - Kod içi yorumlar ASCII Türkçe yazılır.
+- `.bas` dosyasını Windows satır sonuyla (CRLF) yaz; VBA editörü yalnızca LF içeren dosyayı içe aktarırken satırları bozabilir. Python ile: `open(yol, "w", encoding="ascii", newline="\r\n")`.
+- `.bas` dosyasının ilk satırı `Attribute VB_Name = "ModulAdi"` olsun (içe aktarmada modül adını verir). Kullanıcı kodu kopyalayıp yapıştıracaksa bu ilk satırı almamasını söyle; yapıştırılırsa derleme hatası verir.
 
 ### 3. Kod yapısı
 - `Option Explicit` her zaman.
 - Giriş noktası `Sub main()`.
 - `swconst` referansına bağımlı olmamak için kullanılan enum değerlerini modül başında `Const` olarak tanımla ve yanına enum adını yorum olarak yaz (ör. `Const swDocPART As Long = 1`).
 - Değiştirilebilir ayarlar (klasör yolu, özellik adları, dosya adı kalıbı) modülün en üstünde, açıklamalı sabitler olarak dursun. Kullanıcı kodu okumadan ayarlayabilsin.
-- Montajları gezerken: bastırılmış (suppressed) bileşenleri atla, BOM'dan hariç tutulanları (`ExcludeFromBOM`) atla, Toolbox parçalarını (`Extension.ToolboxPartType <> 0`) ayrı ele al, aynı dosyayı yol (path) ile tekilleştir, hafif (lightweight) bileşenleri çözümle.
+- Montajları gezerken: bastırılmış (suppressed) bileşenleri atla, BOM'dan hariç tutulanları atla (SolidWorks 2019 ve sonrası için `Component2.GetExcludeFromBOM2`, konfigürasyon bazlıdır; eski `ExcludeFromBOM` özelliği 2025'te kullanımdan kalkmış (obsolete) olarak işaretlidir, imzayı API Yardımı'ndan doğrula), Toolbox parçalarını (`Extension.ToolboxPartType <> 0`) ayrı ele al, aynı dosyayı yol (path) ile tekilleştir, hafif (lightweight) bileşenleri çözümle.
+- Kütleyi görüntülenen özellik değerinden değil, kütle özelliklerinden (`Extension.CreateMassProperty`) oku; API kütleyi SI birimiyle (kg) verir. Görev bölmesindeki bağlantılı ağırlık değeri belgenin birimine bağlıdır ve kullanıcının belgelerinde gram çıkıyor.
 - Özel özellik okurken önce konfigürasyona özel, sonra dosya geneli (`CustomPropertyManager("")`) yöneticisine bak. Kullanıcının "Özel Özellikler" görev bölmesinin hangisine yazdığı şablona bağlıdır.
 - Dosya yazan makrolar mevcut dosyanın üzerine yazmadan önce sorsun veya tarih-saat eki kullansın.
 - Uzun işlemlerde sonunda özet `MsgBox` göster: kaç dosya işlendi, kaç hata var, çıktı nerede.
